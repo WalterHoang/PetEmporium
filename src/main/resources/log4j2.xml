@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Configuration file for logger -->
+<Configuration>
+    <Properties>
+        <!--Configure properties here-->
+        <Property name="debuglogs">log/application.log</Property>
+    </Properties>
+
+    <Appenders>
+        <!--Configure appenders here-->
+        <File name="debuglogs" fileName="log/application.log">
+            <PatternLayout
+                    pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+
+    </Appenders>
+
+    <Loggers>
+        <!--Configure loggers here-->
+        <Logger name="io.catalyte.training" level="debug">
+            <AppenderRef ref="debuglogs"/>
+        </Logger>
+        <Root level="debug">
+            <AppenderRef ref="debuglogs"/>
+        </Root>
+    </Loggers>
+</Configuration>
